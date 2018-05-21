@@ -25,7 +25,13 @@ aws s3 ls
 aws s3 cp ./mesoko.png s3://test-bucket/
 ```
 
-# Object Detect
+# aws cliでrekognition
+
+aws cliにはいっぱいオプションがある。    
+Available Servicesを参照    
+https://docs.aws.amazon.com/cli/latest/reference/index.html    
+
+## Object Detect
 
 物体検出    
 
@@ -39,7 +45,7 @@ aws --region us-east-1 rekognition detect-labels \
 https://dev.classmethod.jp/cloud/aws/amazon-rekognition-using-aws-cli/
     
 
-# Detect faces
+## Detect faces
 
 顔検出    
 
@@ -49,7 +55,7 @@ aws --region us-east-1 rekognition detect-faces \
 --attributes "ALL"
 ```
 
-# Compare-faces
+## Compare-faces
 
 同じ顔かどうか顔の比較    
 
@@ -58,6 +64,58 @@ aws --region us-east-1 rekognition compare-faces \
 --source-image '{"S3Object":{"Bucket":"test-bucket","Name":"mesoko_nov.png"}}' \
 --target-image '{"S3Object":{"Bucket":"test-bucket","Name":"mesoko_dec.png"}}'
 ```
+
+# aws cli のVideo系
+
+## start-person-tracking
+
+https://docs.aws.amazon.com/cli/latest/reference/rekognition/start-face-detection.html    
+job idが返ってくる    
+
+```
+aws rekognition start-person-tracking \
+--video '{"S3Object":{"Bucket":"test-bucket","Name":"hoge.mp4"}}' \
+--region RegionName
+```
+
+## get-face-detection
+
+https://docs.aws.amazon.com/cli/latest/reference/rekognition/get-face-detection.html    
+
+
+```
+aws --region us-east-1 rekognition get-face-detection \
+--job-id "" \
+--region RegionName
+```
+
+
+# aws公式ドキュメントのソース
+    
+https://github.com/awsdocs/aws-doc-sdk-examples
+
+# ruby
+
+ブログなどで紹介されてないsdkについては公式ドキュメントとソースを見よう。    
+ソースは結構詳しく書いている。    
+
+公式ドキュメント    
+https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/Rekognition/Client.htm    
+
+ソース    
+https://github.com/aws/aws-sdk-ruby/blob/caa6ad17c46c357d6bbf0d8c0f442789ecd9e5c4/gems/aws-sdk-rekognition/lib/aws-sdk-rekognition/client.rb    
+
+公式サンプル    
+https://github.com/shaicoleman/aws-ruby-examples    
+
+# python
+
+https://github.com/garnaat/paws
+
+# java
+
+https://github.com/aws-samples/aws-java-sample
+
 
 # APIの使用
 
