@@ -78,6 +78,52 @@ aws rekognition start-person-tracking \
 --region RegionName
 ```
 
+## get-person-tracking
+
+start person trackingで出たjob idを入れる。    
+IN_PROGRESSになってる間は処理中。    
+
+```
+{
+    "JobStatus": "IN_PROGRESS",
+    "Persons": []
+}
+```
+
+
+
+```
+aws rekognition get-person-tracking --job-id "hoge" --region RegionName
+```
+
+終わってたらjsonで返ってくる    
+
+```
+{
+    "JobStatus": "SUCCEEDED",
+    "VideoMetadata": {
+        "Codec": "h264",
+        "DurationMillis": 37111,
+        "Format": "QuickTime / MOV",
+        "FrameRate": 29.970369338989258,
+        "FrameHeight": 720,
+        "FrameWidth": 1280
+    },
+    "NextToken": "hoge",
+    "Persons": [
+        {
+            "Timestamp": 7,
+            "Person": {
+                "Index": 0,
+                "Face": {
+                    "BoundingBox": {
+...
+```
+
+
+
+<hr>
+
 ## get-face-detection
 
 https://docs.aws.amazon.com/cli/latest/reference/rekognition/get-face-detection.html    
@@ -120,6 +166,10 @@ https://github.com/aws-samples/aws-java-sample
 # APIの使用
 
 https://docs.aws.amazon.com/ja_jp/rekognition/latest/dg/get-started-exercise.html    
+
+# aws video
+
+https://aws.amazon.com/jp/search/?searchQuery=video#facet_type=blogs&page=2&sortResults=modification_date%20desc
 
 
 
