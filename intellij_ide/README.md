@@ -36,3 +36,25 @@ mvn clean install
 ```
 
 
+
+```java:sample.java
+
+
+public class sample{
+    public static void main(String[] args){
+        System.out.print("hello\n");
+
+        System.out.print("hello\n");
+
+        System.out.print("hello\n");
+
+        System.out.println(System.getenv("UEI_BUCKET"));
+
+    }
+}
+
+
+```
+
+
+

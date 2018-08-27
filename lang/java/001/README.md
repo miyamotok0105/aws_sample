@@ -66,6 +66,9 @@ ArtifactId  sample-artifact
 jp.sampleパッケージを作成    
 その下に２ファイルを作成    
 
+Mainクラスの中のmainはpublic static voidで引数がString[] argsになってる。
+
+
 
 ```java:Main.java
 package jp.sample;
@@ -103,5 +106,8 @@ public class ScrapeService {
 
 
 Mainファンクションで右クリックしてデバッグ実行
+
+
+すでにあるプロジェクトを開く場合はIntelliJで001フォルダを指定して開く。
 
 

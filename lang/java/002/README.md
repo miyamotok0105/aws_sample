@@ -10,11 +10,12 @@ aws-java-sdk-1.11.381.zipを解凍
 
 ## ライブラリ追加
 
-libの中のjarファイルをインテリジェーで読み込む。
+- libの中のjarファイルをインテリジェーで読み込む。
+
 Project StructureからLibraiesを選択。
 aws-java-sdk-1.11.381/lib/aws-java-sdk-1.11.381.jar
 
-third-partyの中のlibの中のjarを全部読み込む。
+- third-partyの中のlibの中のjarを全部読み込む。
 
 これでimport com.amazonaws.services.s3.model.S3Object;などのインポートが通るようになるはず。
 
@@ -146,7 +147,7 @@ public class GetObject {
 ```
 
 
-#参考
+# 参考
 
 外部ライブラリを追加する
 http://cortyuming.hateblo.jp/entry/20131007/p1
